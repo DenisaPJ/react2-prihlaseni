@@ -1,18 +1,18 @@
 # Autorizace, Axios, Context, Protected Routes
 
-Používáme API:
+**Používáme API:**
 https://random.zkusmo.eu
 
-Dokumentace:
+**Dokumentace:**
 https://random.zkusmo.eu/swagger-ui
 
-Endpointy:
-GET /reliable
-GET /shaky
-GET /secured
-POST /login
+**Endpointy:**
+- GET /reliable
+- GET /shaky
+- GET /secured
+- POST /login
 
-Přihlášení:
+**Přihlášení:**
 ```json
 {
   "username": "czechita",
