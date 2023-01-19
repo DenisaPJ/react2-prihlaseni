@@ -28,12 +28,12 @@ https://random.zkusmo.eu/swagger-ui
 
 ```js
 const response = await fetch('https://web.com', {
-	method: 'POST',
-	cache: 'no-cache',
-	headers: {
-		'Content-Type': 'application/json'
-	},
-	body: JSON.stringify(data),
+  method: 'POST',
+  cache: 'no-cache',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data),
 })
 ```
 
@@ -59,15 +59,15 @@ const response = await axios.post('https://web.com', data)
 import axios from 'axios'
 
 const client =  axios.create({
-	baseURL: "https://random.zkusmo.eu",
-	withCredentials: true,
-	headers: {
-		'Accept': 'application/json',
-		'Content-Type': 'application/json',
-		'Cache-Control': 'no-cache',
-		'Pragma': 'no-cache',
-		'Expires': '0',
-	}
+  baseURL: "https://random.zkusmo.eu",
+  withCredentials: true,
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache',
+    'Expires': '0',
+  }
 });
 ```
 
@@ -78,14 +78,14 @@ const client =  axios.create({
 import axios from 'axios'
 
 const client =  axios.create({
-	baseURL: "https://random.zkusmo.eu",
+  baseURL: "https://random.zkusmo.eu",
 })
 
 export default {
 
-	getReliableNumber() {
-		return client.get('/reliable');
-	}
+  getReliableNumber() {
+    return client.get('/reliable');
+  }
 
 }
 ```
@@ -110,13 +110,13 @@ import React, { createContext, useState } from "react";
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-	const [auth, setAuth] = useState();
+  const [auth, setAuth] = useState();
 
-	return (
-		<AuthContext.Provider value={{ auth, setAuth }}>
-			{children}
-		</AuthContext.Provider>
-	)
+  return (
+    <AuthContext.Provider value={{ auth, setAuth }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
 export default AuthContext;
@@ -129,10 +129,10 @@ import { AuthProvider } from './context/AuthProvider';
 
 const App = () => {
   return (
-		<div className="container">
-			<AuthProvider>
+    <div className="container">
+      <AuthProvider>
 
-			</AuthProvider>
+      </AuthProvider>
     </div>
   );
 };
@@ -145,7 +145,7 @@ import React, {useContext} from 'react';
 import AuthContext from '../context/AuthProvider';
 
 const Komponenta1 = () => {
-	const {auth} = useContext(AuthContext);
+  const {auth} = useContext(AuthContext);
 }
 
 export default Komponenta1;
@@ -158,7 +158,7 @@ import React, {useContext} from "react";
 import AuthContext from '../context/AuthProvider';
 
 const useAuth = () => {
-	return useContext(AuthContext);
+  return useContext(AuthContext);
 }
 
 export default useAuth;
@@ -177,9 +177,9 @@ const {auth} = useAuth();
 
 ```js
 axios.get('/secured', {
-	headers: {
-		"Authorization": `Bearer ${token}`
-	}
+  headers: {
+    "Authorization": `Bearer ${token}`
+  }
 });
 ```
 
@@ -193,7 +193,7 @@ let isMounted = true;
 const controller = new AbortController();
 
 const response = await axios.get('/whatever', {
-	signal: constroller.signal
+  signal: constroller.signal
 })
 
 isMounted && setWhatever(response.data);
@@ -216,7 +216,7 @@ npm install react-router-dom
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 
 return (
-	<BrowserRouter>
+  <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="expenses" element={<Expenses />} />
